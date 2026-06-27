@@ -1,0 +1,68 @@
+Student Record Management System Report
+
+Introduction
+The Student Record Management System is a menu-driven Python application developed to manage student records 
+efficiently using file handling techniques. The system stores basic student information such as registration number,
+name, and age in a CSV file, while additional information including address, contact, and academic program is
+stored in a JSON file. The application also demonstrates the use of exception handling, logging, file operations, 
+and user input validation.
+
+Input Validation
+To ensure data integrity, the application validates user input before processing.
+The system ensures the following to maintain accurate and consistent records;
+Registration number cannot be empty.
+Student name cannot be empty.
+Age must be a positive integer.
+Duplicate registration numbers are not allowed.
+
+Program Design
+The application consists of the following functions
+1. display_menu() 
+Displays the main menu and available options.
+2. load_json() 
+Reads student details from the JSON file.
+3. save_json() 
+Saves updated student details to the JSON file.
+4. add_student() 
+Adds a new student to both the CSV and JSON files.
+5. view_students() 
+Displays all student records stored in the CSV file.
+6. search_student() 
+Searches for a student using the registration number and displays both CSV and JSON information.
+7. update_student() 
+Updates an existing student's information in both files.
+8. delete_student() 
+Deletes a student's record from both the CSV and JSON files.
+9. main() 
+Controls the menu-driven interface and calls the appropriate function depending on the user's choice.
+
+Data Storage
+The application uses two different file formats.
+1.CSV File
+The CSV file stores Registration Number, Student Nameand Age
+
+JSON File
+The JSON file stores additional student details;
+Address, Contact Number and Academic Program
+JSON was chosen because it stores structured data using key value pairs, making it suitable for storing 
+extra information associated with each registration number.
+
+Exception Handling
+The program uses Python's exception handling mechanisms to prevent unexpected program crashes.
+ValueError handles invalid numeric input such as entering text instead of an age.
+FileNotFoundError handles situations where the required files cannot be found.
+StudentExistsError is a custom exception prevents duplicate registration numbers from being entered.
+General Exception catches any unexpected errors that may occur during execution.
+
+Logging
+The application uses Python's logging module to record system activities.
+Examples of logged actions include
+Student added, Student updated, Student deleted, Student searched, Invalid input, System errors, Program exit
+
+All logs are stored in the file student_system.log, making it easier to monitor user activities and 
+troubleshoot errors.
+
+Conclusion
+The Student Record Management System successfully demonstrates Python concepts including file handling, 
+CSV processing, JSON manipulation, exception handling, logging, functions, loops, conditional statements, 
+and input validation.Future improvements a GUI, database integration, and additional search and reporting features.
