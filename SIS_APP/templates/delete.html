@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Student - Student Information System{% endblock %}
+
+{% block content %}
+    <section class="confirmation-card">
+        {% if student %}
+            <div class="confirmation-header">
+                <h3>🗑️ Confirm Delete</h3>
+                <p>Are you sure you want to delete {{ student.student_name }}?</p>
+            </div>
+
+            <div class="confirmation-actions">
+                <form method="POST" action="{{ url_for('delete_student', student_id=student.id) }}">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+                <form method="POST" action="{{ url_for('permanent_delete_student', student_id=student.id) }}">
+                    <button type="submit" class="btn btn-warning">Delete Student Permanently</button>
+                </form>
+                <a href="{{ url_for('students_list') }}" class="btn btn-secondary">Cancel</a>
+            </div>
+        {% else %}
+            <p>Student not found.</p>
+            <a href="{{ url_for('students_list') }}" class="btn btn-primary">Back to Students</a>
+        {% endif %}
+    </section>
+{% endblock %}
